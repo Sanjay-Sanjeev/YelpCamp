@@ -17,8 +17,8 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes     = require("./routes/index");
     
-//mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
-mongoose.connect("mongodb://yelpcamp:yelpcampdb123@ds119422.mlab.com:19422/yelp_camp", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL , { useNewUrlParser: true });
+//mongoose.connect("mongodb://yelpcamp:yelpcampdb123@ds119422.mlab.com:19422/yelp_camp", { useNewUrlParser: true });
 
 //PASSPORT CONFIG
 app.use(require("express-session")({
